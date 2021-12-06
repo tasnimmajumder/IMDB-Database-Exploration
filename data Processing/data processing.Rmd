@@ -1,0 +1,90 @@
+---
+title: "Untitleddata processing"
+author: "Tasnim Anika Majumder"
+date: "11/23/2021"
+output: word_document
+---
+
+
+```{r, include = FALSE}
+library(tidyverse)
+library(dplyr)
+```
+
+```{r}
+titles <- read_delim("title.basics.tsv", "\t", escape_double = FALSE, na = "\\N", trim_ws = TRUE, quote='',
+                     col_types = cols(
+                       tconst = col_character(), 
+                       titleType = col_character(),
+                       primaryTitle = col_character(),
+                       originalTitle = col_character(),
+                       isAdult = col_logical(),
+                       startYear = col_character(),
+                       endYear = col_integer(),                 
+                       runtimeMinutes = col_integer(), 
+                       genres = col_character()))
+```
+
+```{r}
+ratings <- read_delim("ratings.tsv", "\t", escape_double = FALSE, na = "\\N", trim_ws = TRUE, quote='', 
+                      col_types = cols(
+                       tconst = col_character(),
+                       averageRating = col_double(),
+                       numVotes = col_integer()))
+```
+
+```{r}
+ratings
+```
+```{r}
+imdb<- left_join(ratings, titles, by = "tconst")
+```
+
+```{r}
+imdb
+```
+```{r}
+imdb<- imdb%>%select(tconst,titleType, primaryTitle, originalTitle, isAdult, startYear, endYear, runtimeMinutes, genres, averageRating, numVotes )
+imdb
+```
+```{r}
+max(imdb$runtimeMinutes)
+```
+
+```{r}
+imdb <- imdb %>% select(-originalTitle)
+```
+```{r}
+imdb <- imdb %>% select( -endYear)
+```
+
+```{r}
+imdb$titleType <- factor(imdb$titleType)
+```
+
+```{r}
+imdb<- imdb %>% separate('genres',into=c("main-genre", "sub-genre1", "sub-genre2"), sep=",")
+```
+```{r}
+imdb <- imdb %>% select(-(`sub-genre1`),-(`sub-genre2`))
+```
+
+```{r}
+imdb$startYear <- as.integer(imdb$startYear)
+```
+
+```{r}
+imdb<- imdb[!is.na(imdb$`main-genre`),]
+```
+
+```{r}
+imdb <- imdb[!is.na(imdb$startYear),]
+```
+
+```{r}
+imdb$runtimeMinutes <-  with(imdb, ave(runtimeMinutes, titleType, FUN = function(x) replace(x, is.na(x), mean(x, na.rm = TRUE))))
+```
+```{r}
+write.table(imdb, file = "imdb dataset", sep = "\t", row.names = FALSE)
+```
+
