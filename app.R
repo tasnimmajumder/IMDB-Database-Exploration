@@ -348,15 +348,15 @@ server <- function(input, output) {
         imdb1<- filter(imdb, runtimeMinutes<300)
         if(input$var3=="runtimeMinutes")
         {if(input$var4 == "titleType"){summary(aov(imdb1$runtimeMinutes~imdb1$titleType))}
-            else if (input$var4 == "main.genre") {summary(aov(imdb1$runtimeMinutes~imdb1$main.genre))}
+            else if (input$var4 == "main.genre") {summary(aov(imdb1$runtimeMinutes~imdb1$'main.genre'))}
             else if (input$var4 == "isAdult"){summary(aov(imdb1$runtimeMinutes~imdb1$isAdult))}}
         else if (input$var3 == "averageRating") 
         {if(input$var4 == "titleType"){summary(aov(imdb1$averageRating~imdb1$titleType))}
-            else if (input$var4 == "main.genre") {summary(aov(imdb1$averageRating~imdb1$main.genre))}
+            else if (input$var4 == "main.genre") {summary(aov(imdb1$averageRating~imdb1$'main.genre'))}
             else if (input$var4 == "isAdult"){summary(aov(imdb1$averageRating~imdb1$isAdult))}}
         else if (input$var3 == "numVotes") 
         {if(input$var4 == "titleType"){summary(aov(imdb1$numVotes~imdb1$titleType))}
-            else if (input$var4 == "main.genre") {summary(aov(imdb1$numVotes~imdb1$main.genre))}
+            else if (input$var4 == "main.genre") {summary(aov(imdb1$numVotes~imdb1$'main.genre'))}
             else if (input$var4 == "isAdult"){summary(aov(imdb1$numVotes~imdb1$isAdult))}}
         
     })
@@ -364,17 +364,17 @@ server <- function(input, output) {
     output$result1<- renderText({
         imdb1<- filter(imdb, runtimeMinutes<300)
         if(input$var3=="runtimeMinutes")
-        {if(input$var4 == "titleType"){if(summary(aov(imdb1$runtimeMinutes~imdb1$titleType))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average runiing time for each tittle type is statistically significant."} else{"The average running time for all title type is equal"}}
-            else if (input$var4 == "main.genre"){if(summary(aov(imdb1$runtimeMinutes~imdb1$main.genre))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average runiing time for each genre is statistically significant."} else{"The average running time for all genre is equal"}}
-            else if (input$var4 == "isAdult"){if(summary(aov(imdb1$runtimeMinutes~imdb1$isAdult))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average runiing time for all categories in isAdult variable is statistically significant."} else{"The average running time for all categories in isAdult variable is equal"}}}
+        {if(input$var4 == "titleType"){if(summary(aov(imdb1$runtimeMinutes~imdb1$titleType))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average running time for each tittle type is statistically significant."} else{"The average running time for all title type is equal"}}
+            else if (input$var4 == "main.genre"){if(summary(aov(imdb1$runtimeMinutes~imdb1$'main.genre'))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average running time for each genre is statistically significant."} else{"The average running time for all genre is equal"}}
+            else if (input$var4 == "isAdult"){if(summary(aov(imdb1$runtimeMinutes~imdb1$isAdult))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average running time for all categories in isAdult variable is statistically significant."} else{"The average running time for all categories in isAdult variable is equal"}}}
         else if (input$var3 == "averageRating") 
-        {if(input$var4 == "titleType"){if(summary(aov(imdb1$averageRating~imdb1$titleType))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average runiing time for each tittle type is statistically significant."} else{"The average running time for all title type is equal"}}
-            else if (input$var4 == "main.genre"){if(summary(aov(imdb1$averageRating~imdb1$main.genre))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average runiing time for each genre is statistically significant."} else{"The average running time for all genre is equal"}}
-            else if (input$var4 == "isAdult"){if(summary(aov(imdb1$averageRating~imdb1$isAdult))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average runiing time for all categories in isAdult variable is statistically significant."} else{"The average running time for all categories in isAdult variable is equal"}}}
+        {if(input$var4 == "titleType"){if(summary(aov(imdb1$averageRating~imdb1$titleType))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average rating for each tittle type is statistically significant."} else{"The average rating for all title type is equal"}}
+            else if (input$var4 == "main.genre"){if(summary(aov(imdb1$averageRating~imdb1$'main.genre'))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average rating for each genre is statistically significant."} else{"The average rating for all genre is equal"}}
+            else if (input$var4 == "isAdult"){if(summary(aov(imdb1$averageRating~imdb1$isAdult))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average rating for all categories in isAdult variable is statistically significant."} else{"The average rating for all categories in isAdult variable is equal"}}}
         else if (input$var3 == "numVotes") 
-        {if(input$var4 == "titleType"){if(summary(aov(imdb1$numVotes~imdb1$titleType))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average runiing time for each tittle type is statistically significant."} else{"The average running time for all title type is equal"}}
-            else if (input$var4 == "main.genre"){if(summary(aov(imdb1$numVotes~imdb1$main.genre))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average runiing time for each genre is statistically significant."} else{"The average running time for all genre is equal"}}
-            else if (input$var4 == "isAdult"){if(summary(aov(imdb1$numVotes~imdb1$isAdult))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average runiing time for all categories in isAdult variable is statistically significant."} else{"The average running time for all categories in isAdult variable is equal"}}}
+        {if(input$var4 == "titleType"){if(summary(aov(imdb1$numVotes~imdb1$titleType))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average number of votes for each tittle type is statistically significant."} else{"The average number of votes for all title type is equal"}}
+            else if (input$var4 == "main.genre"){if(summary(aov(imdb1$numVotes~imdb1$'main.genre'))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average number of votes for each genre is statistically significant."} else{"The average number of votes for all genre is equal"}}
+            else if (input$var4 == "isAdult"){if(summary(aov(imdb1$numVotes~imdb1$isAdult))[[1]][1,5]<0.05){"This p-value is less than 0.05. So difference in average number of votes for all categories in isAdult variable is statistically significant."} else{"The average number of votes for all categories in isAdult variable is equal"}}}
     })
     
 }
