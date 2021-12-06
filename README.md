@@ -13,7 +13,9 @@ Using this app users can perfrom descriptive statistics, visualization and stati
 * Open R 
 ```R
 install.packages('shiny')
+install.packages('shinythemes')
 library(shiny)
+library(shinythemes)
 shiny::runGitHub("IMDB-Database-Exploration", "tasnimmajumder", ref="main")
 ```
 
