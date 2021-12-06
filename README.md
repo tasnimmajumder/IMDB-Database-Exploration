@@ -28,7 +28,7 @@ https://tasnimmajumder-1993.shinyapps.io/IMDb_explorer/
 
 ## Brief Instruction
 
-In the first tab of this app users can perfrom descriptive statistics for the variables. For Continuous variables, Start Year (startYear), Average Rating (averageRating), Runtime in Munites (runtimeMinutes) and Number of Votes (numVotes), following functions are provided: mean, median, standard deviation, maximum and minimum. For categorical variables, Title Type (titleType), Genre (genre) and Is Adult (isAdult), summary table function has been provided.
+In the first tab of this app users can perfrom descriptive statistics for the variables. For Continuous variables, Start Year (startYear), Average Rating (averageRating), Runtime in Minutes (runtimeMinutes) and Number of Votes (numVotes), following functions are provided: mean, median, standard deviation, maximum and minimum. For categorical variables, Title Type (titleType), Genre (genre) and Is Adult (isAdult), summary table function has been provided.
 
 In the second tab, visualization, both for continuous and categorical variables, ggplot has been used to show the relations among the variables. For two continuous variables and one catefgorical variable geom_smooth and geom_point have beeen used. On the other hand, for two categorical variables and one continuous variable geom_boxplot has been used.
 
