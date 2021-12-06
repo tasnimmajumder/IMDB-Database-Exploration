@@ -333,15 +333,16 @@ server <- function(input, output) {
     })
     
     output$result<- renderText({
+        imdb1<- filter(imdb, runtimeMinutes<300)
         if(input$var1=="runtimeMinutes")
-        {if(input$var2 == "numVotes"){if(cor.test(imdb$runtimeMinutes, imdb$numVotes)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}
-            else if (input$var2 == "averageRating"){if(cor.test(imdb$runtimeMinutes, imdb$averageRating)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}}
+        {if(input$var2 == "numVotes"){if(cor.test(imdb1$runtimeMinutes, imdb1$numVotes)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}
+            else if (input$var2 == "averageRating"){if(cor.test(imdb1$runtimeMinutes, imdb1$averageRating)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}}
         else if (input$var1 == "averageRating") 
-        {if(input$var2 == "numVotes"){if(cor.test(imdb$averageRating, imdb$numVotes)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}
-            else if (input$var2 == "runtimeMinutes"){if(cor.test(imdb$runtimeMinutes, imdb$averageRating)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}}
+        {if(input$var2 == "numVotes"){if(cor.test(imdb1$averageRating, imdb1$numVotes)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}
+            else if (input$var2 == "runtimeMinutes"){if(cor.test(imdb1$runtimeMinutes, imdb1$averageRating)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}}
         else if (input$var1 == "numVotes") 
-        {if(input$var2 == "averageRating"){if(cor.test(imdb$averageRating, imdb$numVotes)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}
-            else if (input$var2 == "runtimeMinutes"){if(cor.test(imdb$runtimeMinutes, imdb$numVotes)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}}
+        {if(input$var2 == "averageRating"){if(cor.test(imdb1$averageRating, imdb1$numVotes)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}
+            else if (input$var2 == "runtimeMinutes"){if(cor.test(imdb1$runtimeMinutes, imdb1$numVotes)$p.value<0.05){"This p-value is less than 0.05. So correlation value between these two variables is statistically significant."} else{"The coreelation value is not statistically significant"}}}
     })
     
     output$anova <- renderPrint({
