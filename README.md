@@ -21,7 +21,6 @@ shiny::runGitHub("IMDB-Database-Exploration", "tasnimmajumder", ref="main")
 
 ## Tutorial of IMDB-Database-Exploration can be downloaded at
 
-https://github.com/lunching/wiSDOM/blob/master/wiSDOM%20Tutorial.pdf
 
 ## Run IMDB-Database-Explortaion using shinyapps.io with free RStudio service
 
