@@ -23,8 +23,7 @@ shiny::runGitHub("IMDB-Database-Exploration", "tasnimmajumder", ref="main")
 https://github.com/tasnimmajumder/IMDB-Database-Exploration/blob/main/IMDB-Database-Explorer%20Tutorial.pdf
 
 ## Run IMDB-Database-Explortaion using shinyapps.io with free RStudio service
-
-https://tasnimmajumder-1993.shinyapps.io/IMDb_explorer/
+https://tasnimmajumder-1993.shinyapps.io/IMDB-Database-Exploration/
 
 ## Brief Instruction
 
