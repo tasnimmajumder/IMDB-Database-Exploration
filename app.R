@@ -170,7 +170,7 @@ server <- function(input, output) {
                         geom_smooth(method=lm)+
                         labs(x ="Runtime in Minutes", y = "Number of Votes", color = "Title Type")}
                 else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = runtimeMinutes, color = main.genre))+
-                        geom_point()+
+                        geom_boxplot()+
                         labs(x ="Title Type", y = "Runtime in Minutes", color = "Genre")}
                 else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = averageRating, color = titleType))+
                         geom_smooth(method=lm)+
