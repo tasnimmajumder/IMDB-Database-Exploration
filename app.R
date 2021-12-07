@@ -136,186 +136,270 @@ server <- function(input, output) {
         if(input$x=="titleType")
         {if(input$y == "startYear"){
             if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = startYear, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Title Type", y = "Start Year", color = "Title Type")}
             else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = startYear, color = startYear))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Title Type", y = "Start Year", color = "Start Year")}
             else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = startYear, color = isAdult))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Title Type", y = "Start Year", color = "Is Adult")}
             else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = startYear, color = numVotes))+
-                    geom_point()}
+                    geom_point()+
+                    labs(x ="Title Type", y = "Start Year", color = "Number of Votes")}
             else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = startYear, color = main.genre))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Title Type", y = "Start Year", color = "Genre")}
             else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = startYear, color = averageRating))+
-                    geom_point()}
+                    geom_point()+
+                    labs(x ="Title Type", y = "Start Year", color = "Average Rating")}
             else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = startYear, color = runtimeMinutes))+
-                    geom_point()}}
+                    geom_point()+
+                    labs(x ="Title Type", y = "Start Year", color = "Runtime in Minutes")}}
             else if (input$y == "runtimeMinutes")
             { if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = runtimeMinutes, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Title Type", y = "Runtime in Minutes", color = "Title Type")}
                 else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = startYear, color = runtimeMinutes))+
-                        geom_point()}
+                        geom_point()+
+                        labs(x ="Title Type", y = "Start Year", color = "Runtime in Minutes")}
                 else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = runtimeMinutes, color = isAdult))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Title Type", y = "Runtime in Minutes", color = "Is Adult")}
                 else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = numVotes, color = titleType))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Number of Votes", color = "Title Type")}
                 else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = runtimeMinutes, color = main.genre))+
-                        geom_point()}
+                        geom_point()+
+                        labs(x ="Title Type", y = "Runtime in Minutes", color = "Genre")}
                 else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = averageRating, color = titleType))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Average Rating", color = "Title Type")}
                 else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = runtimeMinutes, color = runtimeMinutes))+
-                        geom_boxplot()}}
+                        geom_boxplot()+
+                        labs(x ="Title Type", y = "Runtime in Minutes", color = "Runtime in Minutes")}}
             else if (input$y == "averageRating")
             {if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = averageRating, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Title Type", y = "Average Rating", color = "Title Type")}
                 else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = startYear, color = averageRating))+
-                        geom_point()}
+                        geom_point()+
+                        labs(x ="Title Type", y = "Start Year", color = "Average Rating")}
                 else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = averageRating, color = isAdult))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Title Type", y = "Average Rating", color = "Is Adult")}
                 else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=numVotes, y = averageRating, color = titleType))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Number of Votes", y = "Average Rating", color = "Title Type")}
                 else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = averageRating, color = main.genre))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Title Type", y = "Average Rating", color = "Genre")}
                 else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = averageRating, color = averageRating))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Title Type", y = "Average Rating", color = "Average Rating")}
                 else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = averageRating, color = titleType))+
-                        geom_smooth(method=lm)}}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Average Rating", color = "Title Type")}}
             else if (input$y == "numVotes") 
             {if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = numVotes, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Title Type", y = "Number of Votes", color = "Title Type")}
                 else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = startYear, color = numVotes))+
-                        geom_point()}
+                        geom_point()+
+                        labs(x ="Title Type", y = "Start Year", color = "Number of Votes")}
                 else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = numVotes, color = isAdult))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Title Type", y = "Number of Votes", color = "Is Adult")}
                 else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = numVotes, color = numVotes))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Title Type", y = "Number of Votes", color = "Number of Votes")}
                 else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=titleType, y = numVotes, color = main.genre))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Title Type", y = "Number of Votes", color = "Genre")}
                 else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=numVotes, y = averageRating, color = titleType))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Number of Votes", y = "Average Rating", color = "Title Type")}
                 else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = numVotes, color = titleType))+
-                        geom_smooth(method=lm)}}}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Number of Votes", color = "Title Type")}}}
         else if (input$x == "main.genre")
         {if(input$y == "startYear"){
             if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = startYear, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Genre", y = "Start Year", color = "Title Type")}
             else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = startYear, color = startYear))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Genre", y = "Start Year", color = "Start Year")}
             else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = startYear, color = isAdult))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Genre", y = "Start Year", color = "Is Adult")}
             else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = startYear, color = numVotes))+
-                    geom_point()}
+                    geom_point()+
+                    labs(x ="Genre", y = "Start Year", color = "Number of Votes")}
             else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = startYear, color = main.genre))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Genre", y = "Start Year", color = "Genre")}
             else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = startYear, color = averageRating))+
-                    geom_point()}
+                    geom_point()+
+                    labs(x ="Genre", y = "Start Year", color = "Average Rating")}
             else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = startYear, color = runtimeMinutes))+
-                    geom_point()}}
+                    geom_point()+
+                    labs(x ="Genre", y = "Start Year", color = "Runtime in Minutes")}}
             else if (input$y == "runtimeMinutes")
             { if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = runtimeMinutes, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Genre", y = "Runtime in Minutes", color = "Title Type")}
                 else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = startYear, color = runtimeMinutes))+
-                        geom_point()}
+                        geom_point()+
+                        labs(x ="Genre", y = "Start Year", color = "Runtime in Minutes")}
                 else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = runtimeMinutes, color = isAdult))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Genre", y = "Runtime in Minutes", color = "Is Adult")}
                 else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = numVotes, color = main.genre))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Number of Votes", color = "Genre")}
                 else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = runtimeMinutes, color = main.genre))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Genre", y = "Runtime in Minutes", color = "Genre")}
                 else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = averageRating, color = main.genre))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Average Rating", color = "Genre")}
                 else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = runtimeMinutes, color = runtimeMinutes))+
-                        geom_boxplot()}}
+                        geom_boxplot()+
+                        labs(x ="Genre", y = "Runtime in Minutes", color = "Runtime in Minutes")}}
             else if (input$y == "averageRating")
             {if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = averageRating, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Genre", y = "Average Rating", color = "Title Type")}
                 else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = startYear, color = averageRating))+
-                        geom_point()}
+                        geom_point()+
+                        labs(x ="Genre", y = "Start Year", color = "Average Rating")}
                 else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = averageRating, color = isAdult))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Genre", y = "Average Rating", color = "Is Adult")}
                 else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=numVotes, y = averageRating, color = main.genre))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Number of Votes", y = "Average rating", color = "Genre")}
                 else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = averageRating, color = main.genre))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Genre", y = "Average Rating", color = "Genre")}
                 else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = averageRating, color = averageRating))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Genre", y = "Average Rating", color = "Average Rating")}
                 else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = averageRating, color = main.genre))+
-                        geom_smooth(method=lm)}}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Average Rating", color = "Genre")}}
             else if (input$y == "numVotes") 
             {if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = numVotes, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Genre", y = "Number of Votes", color = "Title Type")}
                 else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = startYear, color = numVotes))+
-                        geom_point()}
+                        geom_point()+
+                        labs(x ="Genre", y = "Start Year", color = "Number of Votes")}
                 else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = numVotes, color = isAdult))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Genre", y = "Number of Votes", color = "Is Adult")}
                 else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = numVotes, color = numVotes))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Genre", y = "Number of Votes", color = "Number of Votes")}
                 else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=main.genre, y = numVotes, color = main.genre))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Genre", y = "Number of Votes", color = "Genre")}
                 else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=numVotes, y = averageRating, color = main.genre))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Number of Votes", y = "Average Rating", color = "Genre")}
                 else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = numVotes, color = main.genre))+
-                        geom_smooth(method=lm)}}}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Number of votes", color = "Genre")}}}
         else if (input$x == "isAdult")
         {if(input$y == "startYear"){
             if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = startYear, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Is Adult", y = "Start Year", color = "Title Type")}
             else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = startYear, color = startYear))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Is Adult", y = "Start Year", color = "Start Year")}
             else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = startYear, color = isAdult))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Is Adult", y = "Start Year", color = "Is Adult")}
             else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = startYear, color = numVotes))+
-                    geom_point()}
+                    geom_point()+
+                    labs(x ="Is Adult", y = "Start Year", color = "Number of Votes")}
             else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = startYear, color = main.genre))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Is Adult", y = "Start Year", color = "Genre")}
             else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = startYear, color = averageRating))+
-                    geom_point()}
+                    geom_point()+
+                    labs(x ="Is Adult", y = "Start Year", color = "Average Rating")}
             else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = startYear, color = runtimeMinutes))+
-                    geom_point()}}
+                    geom_point()+
+                    labs(x ="Is Adult", y = "Start Year", color = "Runtime in Minutes")}}
             else if (input$y == "runtimeMinutes")
             { if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = runtimeMinutes, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Is Adult", y = "Runtime in Minutes", color = "Title Type")}
                 else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = startYear, color = runtimeMinutes))+
-                        geom_point()}
+                        geom_point()+
+                        labs(x ="Is Adult", y = "Start Year", color = "Runtime in Minutes")}
                 else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = runtimeMinutes, color = isAdult))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Is Adult", y = "Runtime in Minutes", color = "Is Adult")}
                 else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = numVotes, color = isAdult))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Number of Votes", color = "Is Adult")}
                 else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = runtimeMinutes, color = main.genre))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Is Adult", y = "Runtime in Minutes", color = "Genre")}
                 else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y =averageRating, color = isAdult ))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Average Rating", color = "Is Adult")}
                 else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = runtimeMinutes, color = runtimeMinutes))+
-                        geom_boxplot()}}
+                        geom_boxplot()+
+                        labs(x ="Is Adult", y = "Runtime in Minutes", color = "Runtime in Minutes")}}
             else if (input$y == "averageRating")
             {if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = averageRating, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Is Adult", y = "Average Rating", color = "Title Type")}
                 else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = startYear, color = averageRating))+
-                        geom_point()}
+                        geom_point()+
+                        labs(x ="Is Adult", y = "Start Year", color = "Runtime in Minutes")}
                 else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = averageRating, color = isAdult))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Is Adult", y = "Average Rating", color = "Is Adult")}
                 else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=numVotes, y = averageRating, color = isAdult))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Number of Votes", y = "Average Rating", color = "Is Adult")}
                 else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = averageRating, color = main.genre))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Is Adult", y = "Average Rating", color = "Genre")}
                 else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = averageRating, color = averageRating))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Is Adult", y = "Average Rating", color = "Average Rating")}
                 else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = averageRating, color = isAdult))+
-                        geom_smooth(method=lm)}}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Average Rating", color = "Is Adult")}}
             else if (input$y == "numVotes") 
             {if(input$z == "titleType"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = numVotes, color = titleType))+
-                    geom_boxplot()}
+                    geom_boxplot()+
+                    labs(x ="Is Adult", y = "Number of Votes", color = "Title Type")}
                 else if (input$z == "startYear"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = startYear, color = numVotes))+
-                        geom_point()}
+                        geom_point()+
+                        labs(x ="Is Adult", y = "Start year", color = "Number of Votes")}
                 else if (input$z == "isAdult"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = numVotes, color = isAdult))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Is Adult", y = "Number of Votes", color = "Is Adult")}
                 else if (input$z == "numVotes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = numVotes, color = numVotes))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Is Adult", y = "Number of Votes", color = "Number of Votes")}
                 else if (input$z == "main.genre"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=isAdult, y = numVotes, color = main.genre))+
-                        geom_boxplot()}
+                        geom_boxplot()+
+                        labs(x ="Is Adult", y = "Number of Votes", color = "Genre")}
                 else if (input$z == "averageRating"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=numVotes, y = averageRating, color = isAdult))+
-                        geom_smooth(method=lm)}
+                        geom_smooth(method=lm)+
+                        labs(x ="Number of Votes", y = "Average Rating", color = "Is Adult")}
                 else if (input$z == "runtimeMinutes"){ggplot(filter(imdb, runtimeMinutes<300),  aes(x=runtimeMinutes, y = numVotes, color = isAdult))+
-                        geom_smooth(method=lm)}}}
+                        geom_smooth(method=lm)+
+                        labs(x ="Runtime in Minutes", y = "Number of Votes", color = "Is Adult")}}}
     })
     
     output$cor <- renderPrint({
